@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 class BookingsController < ApplicationController
+  before_action :authorize_access_request!
+  ROLES = %w[user].freeze
+
   def create
     show = Show.find(params[:show_id])
     total = 0
@@ -28,6 +31,13 @@ class BookingsController < ApplicationController
     render(json: { message: err.message, seat_id: err.record.seat_id, seat_name: err.record.seat.try(:name) }) && (return)
   rescue ActiveRecord::RecordNotFound
     head :not_found
+  end
+
+  def token_claims
+    {
+      aud: ROLES,
+      verify_aud: true
+    }
   end
 
   private

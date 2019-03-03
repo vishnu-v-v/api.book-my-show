@@ -16,6 +16,7 @@
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 require_relative 'support/response_helper'
+require_relative 'support/auth_helper'
 RSpec.configure do |config|
   config.include ResponseHelper
   config.include AuthHelper
