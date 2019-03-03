@@ -11,6 +11,6 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    resources :revenue, only: [:show]
+    resources :revenue, only: [:index]
   end
 end
