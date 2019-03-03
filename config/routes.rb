@@ -9,4 +9,8 @@ Rails.application.routes.draw do
   resources :shows, only: %i[index show] do
     resources :bookings, only: :create
   end
+
+  namespace :admin do
+    resources :revenue, only: [:show]
+  end
 end
