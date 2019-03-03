@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   delete 'signin', controller: :signin, action: :destroy
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  resources :shows, only: :show do
+  resources :shows, only: %i[index show] do
     resources :bookings, only: :create
   end
 end

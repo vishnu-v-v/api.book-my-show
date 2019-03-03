@@ -1,5 +1,9 @@
 class ShowsController < ApplicationController
 
+  def index
+    render json: ShowSerializer.new(Show.all, include: [:seats]).serialized_json
+  end
+
   # GET /shows/:id
   def show
     show = Show.find(params[:id])
