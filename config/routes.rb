@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'me', controller: :users, action: :me
   post 'refresh', controller: :refresh, action: :create
   post 'signin', controller: :signin, action: :create
   post 'signup', controller: :signup, action: :create
