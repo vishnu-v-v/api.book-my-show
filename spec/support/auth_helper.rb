@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module AuthHelper
   def sign_in_as(user)
     payload = { user_id: user.id, aud: [user.role] }

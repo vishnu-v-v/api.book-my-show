@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 namespace :shows do
   desc 'Populate shows data on db'
   task populate_shows: :environment do

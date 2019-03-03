@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Booking < ApplicationRecord
   SERVICE_TAX = 0.14
   SWACH_BHARATH_CESS = 0.05

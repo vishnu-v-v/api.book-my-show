@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe Admin::RevenueController, type: :controller do
   let!(:user) { create(:user) }
   let!(:admin) { create(:user, role: :admin) }

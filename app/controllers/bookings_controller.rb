@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class BookingsController < ApplicationController
   def create
     show = Show.find(params[:show_id])
@@ -23,7 +25,7 @@ class BookingsController < ApplicationController
                    krishi_kalyan_cess: krishi_kalyan_cess,
                    net_amount: net_amount, message: booking_success(show) }
   rescue ActiveRecord::RecordInvalid => err
-    render json: { message: err.message, seat_id: err.record.seat_id, seat_name: err.record.seat.try(:name) } and return
+    render(json: { message: err.message, seat_id: err.record.seat_id, seat_name: err.record.seat.try(:name) }) && (return)
   rescue ActiveRecord::RecordNotFound
     head :not_found
   end
@@ -37,6 +39,7 @@ class BookingsController < ApplicationController
   def rate_of(seat)
     return Booking::PLATINUM if seat.name.include? 'A'
     return Booking::GOLD if seat.name.include? 'B'
+
     Booking::SILVER
   end
 

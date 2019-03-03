@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   get 'me', controller: :users, action: :me
   post 'refresh', controller: :refresh, action: :create

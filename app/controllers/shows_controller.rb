@@ -1,5 +1,6 @@
-class ShowsController < ApplicationController
+# frozen_string_literal: true
 
+class ShowsController < ApplicationController
   def index
     render json: ShowSerializer.new(Show.all).serialized_json
   end

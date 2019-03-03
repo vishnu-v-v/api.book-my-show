@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Admin::RevenueController < ApplicationController
   before_action :authorize_access_request!
   ROLES = %w[admin].freeze
